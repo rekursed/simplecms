@@ -1,0 +1,35 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+{% block title %}
+Admin
+{% endblock %}
+{% block content %}
+
+<h1>Design</h1>
+<div class="row">
+    <div class="col-md-12">  <h4>All the templates and layout files that are visible from the frontend of the project, reside inside
+    src/Zeteq/FrontBundle/Resources/views. 
+   The layouts are inside layout folder.  
+   The templates that extends them are inside the front folder.    
+    </h4>
+     
+        
+        <div class="row">
+    <div class="col-md-3"><div style="" class="well well-dash">
+           
+            <a href="{{path('filemanager_open_dir',{'path':front})}}"> <i style="" class="fa fa-instagram dash-i"></i><h5>Templates & Layouts</h5></a></div></div>
+            <div class="col-md-3"><div class="well well-dash"><a href="{{path('filemanager_open_dir',{'path':css})}}"><i style="" class="fa fa-css3 dash-i"></i>  <h5>CSS Files</h5></a></div></div> 
+        <div class="col-md-3"><div class="well well-dash"><a href="{{path('filemanager_open_dir',{'path':js})}}"><i style="" class="fa fa-code dash-i"></i><h5>Javascript Files</h5></a></div></div>
+        <div class="col-md-3"><div class="well well-dash"><a href="{{path('filemanager_open_dir',{'path':upload})}}"><i style="" class="fa fa-upload dash-i"></i><h5>Uploads</h5></a></div></div>   
+    
+</div>
+        
+    </div>
+  
+    
+</div>
+
+ 
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'ZeteqFrontBundle:Layout:layout.html.twig' %}
+{% block title %} {{entity.getTitle()}}  {% endblock %}
+{% block middle_container -%}
+<div class="">
+{% block content -%}
+
+{{include(page_file)}}
+
+
+{% endblock content%}
+    </div>
+
+
+{% endblock middle_container %}
+
+
+ 
+ 
+

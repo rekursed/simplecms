@@ -1,0 +1,18 @@
+servers:
+    hostmonster:
+        host: dhakatowel.com
+        user: dhakatow
+        dir: /home5/dhakatow/public_html/sean
+        port: 22
+#        password: vigilant
+        options: # Server options, override the globals
+            dry_run: %kernel.debug%
+
+    odyssey:
+        host: odysseydoor.com
+        user: odyssey
+        dir: /home3/odyssey/simplecms
+        port: 2222
+#        password: vigilant
+        options: # Server options, override the globals
+            dry_run: %kernel.debug%

@@ -1,0 +1,11 @@
+services:
+    blog:
+        class:  Zeteq\BlogBundle\Extensions\Blog
+        arguments: ['@doctrine.orm.entity_manager']
+ 
+    twig.extension.blog:
+        class: Zeteq\BlogBundle\Extensions\BlogExtension
+        arguments: ["@blog"]
+        tags:
+            - { name: twig.extension }
+

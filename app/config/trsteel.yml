@@ -1,0 +1,26 @@
+trsteel_ckeditor:
+    class: Trsteel\CkeditorBundle\Form\Type\CkeditorType
+    toolbar: ['document', 'clipboard', 'editing','basicstyles', 'paragraph', 'links', 'insert', 'styles']
+    toolbar_groups:
+        document: ['Source']
+        clipboard: ['Cut','Copy','Paste','Undo','Redo']
+        editing: ['Find','Replace','-','SelectAll']
+        basicstyles: ['Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat']
+        paragraph: ['NumberedList','BulletedList','-','Outdent','Indent','-','JustifyLeft', 'JustifyCenter','JustifyRight','JustifyBlock']
+        links: ['Link','Unlink','Anchor']
+        insert: ['Image','Flash','Table','HorizontalRule']
+        styles: ['Styles','Format']
+
+
+    ui_color: '#000000'
+    startup_outline_blocks: true
+    width: 100% #Integer or %
+    height: 500 #Integer or %
+    language: 'en-au'
+    filebrowser_upload_url:
+        url: relative-url.php?type=file
+    filebrowser_image_browse_url:
+        route: elfinder
+        route_parameters:
+            type: image
+

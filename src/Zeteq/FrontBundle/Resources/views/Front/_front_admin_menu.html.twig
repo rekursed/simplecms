@@ -1,0 +1,72 @@
+        <nav role="navigation" class="navbar navbar-default  navbar-fixed-bottom" id="" style="box-shadow: 0px 0px 3px black;margin-top:60px;">
+        
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button data-target="#nav_collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                
+            <a href="{{path('admin')}}" class="navbar-brand"><i class="fa fa-cogs"></i> Admin panel</a>
+ 
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="btn-toolbar navbar-right" id=" ">
+            
+           {% if app.request.get('_route') == 'page_show'  %}
+ <a class="btn btn-info navbar-btn"  href="{{path('page_editor',{'slug':entity.slug})}}"><i class="fa fa-plus-square-o"></i>Html Edit </a>
+ <a class="btn btn-info navbar-btn"  href="{{path('page_edit',{'id':entity.id})}}"><i class="fa fa-plus-square-o"></i>Code Edit </a>
+ {% endif %}
+
+ 
+            {% if app.request.get('_route') == 'home'  %}
+ <a class="btn btn-info navbar-btn"  href="{{path('page_editor',{'slug':'home'})}}"><i class="fa fa-plus-square-o"></i> Edit </a>
+ {% endif %}
+ 
+ 
+            {% if app.request.get('_route') == 'blogpost_show'  %}
+ <a class="btn btn-info navbar-btn"  href="{{path('blogpost_editor',{'slug':entity.slug})}}"><i class="fa fa-plus-square-o"></i> Edit</a>
+ {% endif %}
+ 
+ 
+ <a class="btn btn-info navbar-btn"  href="{{path('page_new')}}"><i class="fa fa-plus-square-o"></i> New Page </a>
+<a class="btn btn-info navbar-btn" href="{{path('blogpost_new')}}"><i class="fa fa-plus-square-o"></i> New Blog Post </a>
+       
+<div style="margin-right: 5px" class="btn-group dropup navbar-btn">
+          <button class="btn btn-primary " type="button">Design</button>
+          <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button">
+            <span class="caret"></span>
+            <span class="sr-only">Design</span>
+          </button>
+          <ul role="menu" class="dropdown-menu">
+
+              
+                  <li><a target="_blank" href="{{path('admin_edit_file',{'path':'/src/Zeteq/FrontBundle/Resources/views/Front/_footer.html.twig'})}}">edit footer</a></li>
+    <li><a target="_blank" href="{{path('admin_edit_file',{'path':'/src/Zeteq/FrontBundle/Resources/views/Front/page_show.html.twig'})}}">edit page template</a></li>              
+    <li><a target="_blank" href="{{path('admin_edit_file',{'path':'/src/Zeteq/FrontBundle/Resources/views/Front/contact_us_form.html.twig'})}}">edit contact form</a></li>
+        <li><a target="_blank" href="{{path('admin_edit_file',{'path':'/src/Zeteq/FrontBundle/Resources/views/Front/contact_us_email.html.twig'})}}">edit contact email</a></li>
+                          
+              
+            <li><a target="_blank" href="{{path('admin_edit_file',{'path':'/web/css/main.css'})}}">Edit main css file</a></li>
+            <li class="divider"></li>
+            <li><a target="_blank" href="{{path('admin_edit_file',{'path':'/src/Zeteq/FrontBundle/Resources/views/Layout/layout.html.twig'})}}">edit layout file</a></li>
+          </ul>
+        </div>
+<a href="{{path('logout')}}" class="btn btn-info navbar-btn" style="margin-right: 10px">
+
+    
+    <i class="fa fa-sign-out"></i> Logout
+        </a>
+
+
+      
+        </div><!-- /.navbar-collapse -->
+        
+        </div>
+      </nav>
+
+

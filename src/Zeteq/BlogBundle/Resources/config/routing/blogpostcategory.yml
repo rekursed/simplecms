@@ -1,0 +1,28 @@
+blogpostcategory:
+    pattern:  /
+    defaults: { _controller: "ZeteqBlogBundle:BlogPostCategory:index" }
+
+
+
+blogpostcategory_new:
+    pattern:  /new
+    defaults: { _controller: "ZeteqBlogBundle:BlogPostCategory:new" }
+
+blogpostcategory_create:
+    pattern:  /create
+    defaults: { _controller: "ZeteqBlogBundle:BlogPostCategory:create" }
+    requirements: { _method: post }
+
+blogpostcategory_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZeteqBlogBundle:BlogPostCategory:edit" }
+
+blogpostcategory_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZeteqBlogBundle:BlogPostCategory:update" }
+    requirements: { _method: post|put }
+
+blogpostcategory_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZeteqBlogBundle:BlogPostCategory:delete" }
+

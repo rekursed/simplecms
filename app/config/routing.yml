@@ -1,0 +1,111 @@
+ZeteqPageBundle_subscriber:
+    resource: "@ZeteqPageBundle/Resources/config/routing/subscriber.yml"
+    prefix:   /admin/subscriber
+ZeteqPageBundle_menu:
+    resource: "@ZeteqPageBundle/Resources/config/routing/menu.yml"
+    prefix:   /admin/menu
+ZeteqPageBundle_link:
+    resource: "@ZeteqPageBundle/Resources/config/routing/link.yml"
+    prefix:   /admin/link
+
+
+
+FileManager:
+    resource: "@ZeteqFileManagerBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+ZeteqBlogBundle_blogpost:
+    resource: "@ZeteqBlogBundle/Resources/config/routing/blogpost.yml"
+    prefix:   /blogpost
+
+ZeteqBlogBundle_blogpostcategory:
+    resource: "@ZeteqBlogBundle/Resources/config/routing/blogpostcategory.yml"
+    prefix:   /blogpostcategory
+
+
+
+
+zeteq_front:
+    resource: "@ZeteqFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+zeteq_blog:
+    resource: "@ZeteqBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+ZeteqPageBundle_site:
+    resource: "@ZeteqPageBundle/Resources/config/routing/site.yml"
+    prefix:   /admin/site
+
+ZeteqPageBundle_gallery:
+    resource: "@ZeteqPageBundle/Resources/config/routing/gallery.yml"
+    prefix:   /admin/gallery
+
+ZeteqPageBundle_image:
+    resource: "@ZeteqPageBundle/Resources/config/routing/image.yml"
+    prefix:   /admin/image
+
+
+zeteq_admin:
+    resource: "@ZeteqAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+zeteq_page:
+    resource: "@ZeteqPageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ZeteqPageBundle_slot:
+    resource: "@ZeteqPageBundle/Resources/config/routing/slot.yml"
+    prefix:   /admin/slot
+
+
+ZeteqPageBundle_page:
+    resource: "@ZeteqPageBundle/Resources/config/routing/page.yml"
+    prefix:   /admin/page
+ZeteqPageBundle_category:
+    resource: "@ZeteqPageBundle/Resources/config/routing/category.yml"
+    prefix:   /admin/category
+
+
+zeteq_user:
+    resource: "@ZeteqUserBundle/Resources/config/routing.yml"
+    prefix:   /admin/
+
+ZeteqUserBundle_user:
+    resource: "@ZeteqUserBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+ZeteqUserBundle_role:
+    resource: "@ZeteqUserBundle/Resources/config/routing/role.yml"
+    prefix:   /admin/role
+
+login:
+    resource: "@ZeteqUserBundle/Resources/config/routing/login.yml"
+    prefix:   /
+
+
+
+
+register:
+    resource: "@ZeteqUserBundle/Resources/config/routing/user_registration.yml"
+    prefix:   /
+
+forgot:
+    resource: "@ZeteqUserBundle/Resources/config/routing/forgot.yml"
+    prefix:   /
+
+
+_imagine:
+    resource: .
+    type:     imagine
+    
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"
+     
+     
+admin_login:
+    path:   /login_admin
+    defaults:  { _controller: ZeteqAdminBundle:Admin:login }
+
+     
+

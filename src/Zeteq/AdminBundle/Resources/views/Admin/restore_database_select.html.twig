@@ -1,0 +1,29 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+{% block title %}
+Restore Database
+{% endblock %}
+{% block content %}
+
+
+<h3>Backups</h3>
+<h1 class="alert-danger"><i class="fa fa-warning"> Restoring a database will erase all previous data. As you precaution before restoring you should backup your current database.</i></h1>
+<div class="well">
+    <table class="table table-condensed table-striped ">
+
+        {% for f in files|reverse%}
+
+
+
+        <tr>
+            
+            <td>          <a target="_blank"  class="btn-small" href="{{path('filemanager_editfile',{'path':f.getRealPath})}}">  {{f.filename}} </a>
+            </td>
+            <td><a href="{{path('restore_database',{'filename':f.getRelativePathName()})}}" onclick = "return contirm('Are you sure? It will erase all current data.')">restore</a></td>
+        </tr>
+             {% endfor %} 
+    </table>        
+
+</div>
+
+{% endblock %}

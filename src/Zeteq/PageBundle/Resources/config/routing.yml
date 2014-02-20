@@ -1,0 +1,4 @@
+zeteq_page_slot:
+    resource: "@ZeteqPageBundle/Resources/config/routing/slot.yml"
+    prefix:   /slot
+

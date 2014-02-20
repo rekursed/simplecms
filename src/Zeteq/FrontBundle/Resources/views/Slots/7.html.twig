@@ -1,0 +1,32 @@
+<div class="carousel" data-ride="carousel" id="ads-carousel-div">
+
+         
+             <ol class="carousel-indicators"> 
+            {% for image in service.getGallery("ads").getImages() %} 
+         
+            {% if loop.index ==1 %}
+        <li data-target="#ads-carousel-div" data-slide-to="0" class="active"></li>
+          {% else %}
+               <li data-target="#ads-carousel-div" data-slide-to="{{loop.index-1}}" class="active"></li>
+     
+            {% endif %}
+            {% endfor %}
+            </ol>
+        
+        
+        
+        <div class="carousel-inner">{% for image in service.getGallery("ads").getImages() %}
+        
+          <div class="item {% if loop.index ==1 %} active {% endif %} ">
+            <img src="{{asset(image.getWebPath())}}" style="height:300px;width: 100%" />
+          </div>
+        {% endfor %}
+        </div>
+        
+        
+        <a class="left carousel-control" data-slide="prev" href="#ads-carousel-div">
+        <span class="glyphicon glyphicon-chevron-left"> &nbsp;</span>  &nbsp; </a>
+        
+         <a class="right carousel-control" data-slide="next" href="#ads-carousel-div"> <span class="glyphicon glyphicon-chevron-right"> &nbsp;			</span>  &nbsp; </a>
+
+</div>

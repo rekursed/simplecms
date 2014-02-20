@@ -1,0 +1,345 @@
+
+@font-face
+{   font-family: droid;
+    src: url('../fonts/DroidSans.ttf');
+}
+
+@font-face
+{   font-family: DB;
+    src: url('../fonts/DroidSans-Bold.ttf');
+}
+
+@font-face
+{   font-family: PT;
+    src: url('../fonts/PT_Sans-Web-Regular.ttf');
+}
+
+@font-face
+{   font-family: PTB;
+    src: url('../fonts/PT_Sans-Web-Bold.ttf');
+}
+
+
+#top_menu{
+
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+#cover_area{
+
+    text-align: center;padding-bottom: 10px;
+}
+
+
+
+body{
+    font-family: PT;
+    padding-top:65px;
+
+}
+
+#main_container{
+    
+    min-height:400px;
+}
+.feature_row div 
+{
+    text-align:center;
+}
+
+
+#footer{
+    margin-top: 0px;
+    padding-top:20px;
+    color:white;
+    text-align:center;
+    padding-bottom:20px;
+
+}
+#footer a{
+    color:white;
+}
+#copyright{text-align: center;border-top:solid 1px silver}
+
+
+
+
+.index_section{
+
+    min-height: 100%;
+    margin-top:0px;
+    text-align: center;
+    background:white;
+    position: relative;
+    padding-top:60px;
+}
+
+.section-icon {
+    background-color: #21B799;
+    border-radius: 50% 50% 50% 50%;
+    display: inline-block;
+    height: 80px;
+
+    overflow: hidden;
+    font-size: 50px;
+    text-align: center;
+
+    width: 80px;
+    z-index: 201;
+    position:relative;
+    margin-top:-42px;
+}
+
+.index_section .item .icon {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border-radius: 50% 50% 50% 50%;
+    height: 160px;
+    margin: 0 auto 40px;
+    width: 160px;
+    font-size:50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 120px;
+}
+
+.index_section .item .icon:hover {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.4s ease-out 0s;
+}
+
+#index_welcome{
+
+    opacity:0.9;
+    height:600px;
+    color:white;
+    text-align:center;
+    position:relative;
+}
+
+.navbar-brand{font-size:23px;color:#333}
+
+.top-nav-a {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.index_section_border{
+    background: brown;
+    height:80px;
+    top:-80px;
+    opacity:0.3;
+    z-index: 13;
+    position:absolute;
+    width:100%;
+    left:0px;
+}
+
+
+
+
+.home-row{
+    text-align:center;
+    margin-top:20px;
+}
+
+.blog_cat_menu ul{
+
+    margin:0px;padding:0px;
+}
+
+.blog_cat_menu ul li{
+
+    margin-left:5px;padding-left:10px;
+    list-style:none;
+}
+
+
+.blog_cat_menu ul li h5{
+    border-bottom: 1px solid #C0C0C0;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.home_icon {
+    background: none repeat scroll 0 0 #EAEAEA;
+    border: 1px solid #E0E0E0;
+    font-size: 90px;
+    min-height: 490px;
+    text-align: center;
+    transition: background-color 1s,color 1s;
+}
+
+.home_icon_text{
+    transition: color .2s;
+}
+.home_icon_text {
+    color: #555555;
+    font-size: 18px;
+    padding: 30px;
+    text-align: center;
+}
+
+.home_icon:hover{
+    background-color: #79CDFF;
+    color:white;
+cursor: alias;
+}
+.home_icon:hover .home_icon_text{
+    color:white
+}
+
+
+.page_header{
+
+    background:#444;
+    padding-bottom:20px;
+    padding-top:20px;
+    margin-bottom:0px;
+}
+.page_header h1{
+    color:white;
+}
+.footer_text
+{
+
+    text-align: left;
+    color:white;
+    margin-bottom: 20px;
+}
+.footer_text ul{
+    padding:0px;
+    margin:0px;
+}
+
+.footer_text ul li{
+    list-style: none;
+}
+
+
+
+
+
+.slide_container{
+
+    height:400px;
+    width:100%;
+}
+.slide_container a{
+    color:white;
+}
+
+#div_features{ color:white;}
+
+
+#div_tech {
+    background:url('/upload/images/food.png');
+    color: #FFFFFF;
+}
+
+
+div#div_tech slide_i a{
+    color:white
+}
+#div_tech h1{
+    margin-top:30px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-size: 60px;
+
+}
+
+#div_tech .i_cont
+{
+    text-align: center;
+
+}
+
+
+#div_features{
+    background:url('/upload/images/stardust.png');
+}
+
+#div_features i.slide_i{
+    background:red;
+    color:white;
+    color:white;
+    background:none;
+}                                                                                                            
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: PT,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.upp{
+    text-transform: uppercase;
+}
+
+.courier {
+    font-family: Courier New;
+    font-weight: bold;
+}
+
+.slide_i{
+    height:150px;
+    width:150px;                                                                                                                                                                                                                                                                display: inline-block;
+}
+
+#div_responsive {
+   background:url('/upload/images/purty_wood.png');
+    color: #404040;
+    padding-top: 45px;
+}
+
+#div_responsive i.slide_i {
+    color: #FFE5A0;
+    font-size: 150px;
+    line-height: 150px;
+    margin: 5px;
+    text-align: center;
+}   
+
+#div_features{
+    padding-top: 30px;
+    text-align: center;
+}
+
+#div_features .i_cont{
+    text-align: center;
+}
+
+#div_features h1 {
+    font-family: droid;
+    margin-top: 40px;
+    text-shadow: 2px 2px 1px #499DCF;
+}
+
+#div_responsive h1 {
+    text-shadow: 2px 2px 1px #8FAA40;
+}
+
+.slide_i{
+    font-size:90px;
+}
+
+#scroll_top {
+    background-color: #69BDEF;
+    bottom: 225px;
+    color: #FFFFFF;
+    display: none;
+    font-weight: bold;
+    padding: 15px 20px;
+    opacity: 0.8;
+    position: fixed;
+    right: 0;
+    transition: display 2s,background-color 3s;
+}
+
+
+

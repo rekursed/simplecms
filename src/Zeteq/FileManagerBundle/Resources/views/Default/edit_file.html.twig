@@ -1,0 +1,84 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+ {% block title %}
+{{file_name}} -- admin/edit
+{% endblock %}
+
+
+{% block header %}
+{% endblock  %}
+
+{% block container -%}
+
+
+
+<script>
+    // wait for the DOM to be loaded 
+    $(document).ready(function() {
+        $(".save_button").click(function() {
+            $(this).html('<i class="fa fa-refresh fa-spin"></i> Saving');
+        });
+
+        // bind 'myForm' and provide a simple callback function 
+        $('form').ajaxForm(function() {
+            $(".save_button").html('save');
+        });
+    });
+</script> 
+
+<script>
+    function close_window() {
+        if (confirm("Close Window?")) {
+            close();
+        }
+    }
+</script>
+
+
+<form class="" method="post" action="{{path('filemanager_savefile')}}">
+    <nav id=""  class="navbar navbar-default  navbar-fixed-top" role="navigation">
+
+        <div class="">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand">Edit File : {{path}}</a>
+
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="nav_collapse" class="collapse navbar-collapse btn-toolbar navbar-right ">
+
+                <button   class="btn btn-primary  navbar-btn save_button" type="submit"><i style="display:none" class="icon-spinner icon-spin icon-1x  "></i> <span class="btn_text">Save</span> </button>
+                <a class="btn btn-danger navbar-btn " href="#" onclick="close_window();
+          return false;">close</a>
+
+
+
+
+            </div><!-- /.navbar-collapse -->
+
+        </div>
+    </nav>
+
+
+
+
+
+
+    <textarea id="code" class="" style="width:100%;height: 800px" class="lined1" name="file_content">
+                {{file_content}}
+    </textarea>
+    <input type="hidden" name="path" value="{{path}}"/>
+</form>
+
+
+{{include('ZeteqAdminBundle:Admin:codemirror.html.twig',{'id':'code'})}}
+                {% endblock %}

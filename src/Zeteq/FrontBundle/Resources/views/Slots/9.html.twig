@@ -1,0 +1,12 @@
+<div class="">
+
+    
+{% for image in service.getGallery('Image Gallery').getImages()%}
+  <div class='col-md-3'>
+    <img style="width:100%" src="{{asset(image.getWebPath())}}"/>
+   </div>
+
+{% endfor %}
+    
+     
+</div>

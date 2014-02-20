@@ -1,0 +1,75 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+ {% block title %}
+File manager --Admin
+{% endblock %}
+
+{% block content -%}
+<script>
+$(document).ready(function(){
+    
+    $("#main_nav li").removeClass('active');
+    $("#main_nav_menu").addClass('active');
+});
+    </script>
+
+      <div class="navbar">
+          <div class="navbar-inner">
+              <a class="brand">Menu</a>
+              
+        <ul class="nav pull-right">
+
+          <li class="">            <a href="{{ path('menu_new') }}">   <i class="icon-plus"></i>   New File </a>
+            
+              </li>
+              <li>   <a href="{{ path('menu_new') }}">   <i class="icon-plus"></i>   New Folder </a></li>
+
+        </ul>
+        
+      </div></div>
+
+
+    <table>
+ {% for f in files %}
+    <tr><td>
+        {{f.filename}}
+        </td>
+            
+        <td>
+        
+            <a href="{{path('filemanager_editfile',{'path':f.getRealPath})}}">edit</a>
+        <a href="{{path('filemanager_delete_file',{'path':f.getRealPath})}}">delete</a>
+        <a href="{{path('filemanager_copy_file',{'path':f.getRealPath})}}">copy</a>
+        <a href="{{path('filemanager_rename_file',{'path':f.getRealPath})}}">rename</a>
+        <a href="{{path('filemanager_download_file',{'path':f.getRealPath})}}">download</a>
+        <a href="{{path('filemanager_backup_file',{'path':f.getRealPath})}}">backup</a>
+        </td>
+            
+            </tr>
+
+{% endfor %}
+ </table>
+    
+    
+    
+    <table>
+ {% for f in finder %}
+    <tr><td>
+        {{f.filename}}
+        </td>
+            
+        <td>
+        
+            <a href="{{path('filemanager_editfile',{'path':f.getRealPath})}}">edit</a>
+        <a href="{{path('filemanager_delete_file',{'path':f.getRealPath})}}">delete</a>
+        <a href="{{path('filemanager_copy_file',{'path':f.getRealPath})}}">copy</a>
+        <a href="{{path('filemanager_rename_file',{'path':f.getRealPath})}}">rename</a>
+        <a href="{{path('filemanager_download_file',{'path':f.getRealPath})}}">download</a>
+        <a href="{{path('filemanager_backup_file',{'path':f.getRealPath})}}">backup</a>
+        </td>
+            
+            </tr>
+
+{% endfor %}
+ </table>
+    {% endblock %}

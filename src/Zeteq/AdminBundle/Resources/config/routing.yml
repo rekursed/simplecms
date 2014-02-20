@@ -1,0 +1,36 @@
+admin:
+    pattern:  /admin
+    defaults: { _controller: ZeteqAdminBundle:Admin:index }
+design:
+    pattern:  /design
+    defaults: { _controller: ZeteqAdminBundle:Admin:design }
+
+
+show_dir:
+    pattern:  /admin/design/show_dir
+    defaults: { _controller: ZeteqAdminBundle:Admin:show_dir }
+howto:
+    pattern:  /howto
+    defaults: { _controller: ZeteqAdminBundle:Admin:howto }    
+icons:
+    pattern:  /icons
+    defaults: { _controller: ZeteqAdminBundle:Admin:icons }   
+    
+    
+admin_edit_file:
+    pattern:  /admin/editfile/
+    defaults: { _controller: ZeteqAdminBundle:Admin:edit_file }
+    
+backup_database:
+    pattern:  /admin/backup_database/
+    defaults: { _controller: ZeteqAdminBundle:Admin:backup_database }
+        
+restore_database:
+    pattern:  /admin/restore_database/{filename}
+    defaults: { _controller: ZeteqAdminBundle:Admin:restore_database }    
+        
+restore_database_select:
+    pattern:  /admin/restore_database_select/
+    defaults: { _controller: ZeteqAdminBundle:Admin:restore_database_select }      
+    
+ 

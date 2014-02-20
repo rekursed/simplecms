@@ -1,0 +1,59 @@
+{% extends 'ZeteqFrontBundle:Layout:blog_layout.html.twig' %}
+ 
+
+{% block title %}
+Blog Search
+{% endblock %}
+{% block content %}
+
+<script>
+$(document).ready(function(){
+    
+   // $('ul.child_ul').hide();
+});
+    </script>
+    <div class="container">
+<div class="row">
+
+        <div class="col-md-12">
+            
+
+
+    <ul class="breadcrumb">
+    <li><a href="">Blog</a></li>
+    <li><a href="#">search</a></li>
+ 
+    </ul>
+ 
+<div class="page-header">
+            <h1>Search</h1>
+          </div>
+
+{# sorting of properties based on query components #}
+
+{# table body #}
+ {% for article in pagination %}
+
+    <h3><a href=" {{path('blogpost_show',{'slug':article.slug})}} ">{{ article.title }}</a></h3>
+    <h6>{{article.getUpdated()|date('d-M-Y H:i')}}</h6>
+    <div>{{ article.overview }}</div>
+   <hr/>
+{% endfor %}
+{# display navigation #}
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+

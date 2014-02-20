@@ -1,0 +1,7 @@
+parameters:
+#    cart_excel_file_manager.example.class: Zeteq\FileManagerBundle\Example
+
+services:
+#    cart_excel_file_manager.example:
+#        class: %cart_excel_file_manager.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

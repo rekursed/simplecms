@@ -1,0 +1,116 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+{% block title %}
+How to
+{% endblock %}
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="affix">
+            <ul>
+                <li><a href="#homepage">Home page</a></li>
+                <li><a href="#slots">Slots</a></li> 
+                 <li><a href="#layout">Layout</a></li>
+                  <li><a href="#templates">Templates</a></li>
+                <li><a href="#carousel">Carousel</a></li>
+            </ul>
+        </div>
+
+    </div> 
+
+
+    <div class="col-md-9">
+        <div id="" class="page-header">      <h1>How to! </h1>  </div>
+
+        <div id="homepage" >
+            <h3>Set the home page</h3>
+
+            Any page that is named home or has the slug 'home' will be shown first in the home page. It will not be shown in page mens
+            You can link to it by <pre> {{"<a href='{{path('home')}}'>Home</a>"|escape('html')}} </pre>
+
+        </div>
+
+        <div id="slots" >
+            <h3>Slots</h3>
+            Slots allow you to  define a zone that can be used in many pages. Slots can be included by 
+            
+ <pre> {{"{{include(service.getSlot(3))}}"|escape('html')}} </pre>
+ 3 is the id of the slot. Slots are located inside the slot folder.
+        </div>
+
+
+        <div id="layout" >
+            <h3>Set the home page</h3>
+
+            Any page that is named home or has the slug 'home' will be shown first in the home page. It will not be shown in page mens
+            You can link to it by <pre> {{"<a href='{{path('home')}}'>Home</a>"|escape('html')}} </pre>
+
+        </div>
+        
+
+        <div id="templates" >
+            <h3>Set the home page</h3>
+
+            Any page that is named home or has the slug 'home' will be shown first in the home page. It will not be shown in page mens
+            You can link to it by <pre> {{"<a href='{{path('home')}}'>Home</a>"|escape('html')}} </pre>
+
+        </div>   
+        
+        
+          <div id="carousel" >
+            <h3>Bootstrap carousel</h3>      
+        
+        <pre>
+            
+{{
+'
+<div class="carousel" data-ride="carousel" id="carousel-div">
+
+         
+             <ol class="carousel-indicators"> 
+            {% for image in service.getGallery("Home").getImages() %} 
+         
+            {% if loop.index ==1 %}
+        <li data-target="#carousel-div" data-slide-to="0" class="active"></li>
+          {% else %}
+               <li data-target="#carousel-div" data-slide-to="{{loop.index-1}}" class="active"></li>
+     
+            {% endif %}
+            {% endfor %}
+            </ol>
+        
+        
+        
+        <div class="carousel-inner">{% for image in service.getGallery("Home").getImages() %}
+        
+          <div class="item {% if loop.index ==1 %} active {% endif %} ">
+            <img src="{{asset(image.getWebPath())}}" style="height:300px;width: 100%" />
+          </div>
+        {% endfor %}
+        </div>
+        
+        
+        <a class="left carousel-control" data-slide="prev" href="#carousel-div">
+        <span class="glyphicon glyphicon-chevron-left"> &nbsp;</span>  &nbsp; </a>
+        
+         <a class="right carousel-control" data-slide="next" href="#carousel-div"> <span class="glyphicon glyphicon-chevron-right"> &nbsp;			</span>  &nbsp; </a>
+
+</div>
+
+'
+|escape('html')
+
+}}
+        </pre>        </div>   
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}

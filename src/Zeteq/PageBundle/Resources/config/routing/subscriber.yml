@@ -1,0 +1,30 @@
+subscriber:
+    pattern:  /
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:index" }
+
+subscriber_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:show" }
+
+subscriber_new:
+    pattern:  /new
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:new" }
+
+subscriber_create:
+    pattern:  /create
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:create" }
+    requirements: { _method: post }
+
+subscriber_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:edit" }
+
+subscriber_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:update" }
+    requirements: { _method: post|put }
+
+subscriber_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZeteqPageBundle:Subscriber:delete" }
+

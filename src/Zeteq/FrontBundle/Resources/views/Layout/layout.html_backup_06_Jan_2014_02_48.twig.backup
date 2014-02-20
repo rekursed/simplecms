@@ -1,0 +1,261 @@
+                                {% if service.getSite()%}
+
+
+<!DOCTYPE HTML>
+<head>
+    <link rel="shortcut icon" href="{{asset(service.getSite().getFaviconWebPath() )}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+    <title>{% block title %}  {{service.getSite().getTitle()}}  {% endblock %}</title>
+
+
+
+    <!-- for Google -->
+    <meta name="description" content="{% block meta_description %}        {{service.getSite().getMetaDescription()}}   {% endblock %}" />     
+    <meta name="keywords" content=" {% block meta_keywords %}    {{service.getSite().getMetaKeywords()}} {% endblock %}" />
+
+
+    <meta name="copyright" content="    {{service.getSite().getMetaCopyright()}} " />
+    <meta name="application-name" content="    {{service.getSite().getMetaApplication()}} " />
+
+
+
+    <!-- for Facebook -->          
+    <meta property="og:title" content="{% block og_title %}      {{service.getSite().getFacebookTitle()}}   {% endblock %}" />
+    <meta property="og:type" content="    {{service.getSite().getFacebookType()}} " />
+    <meta property="og:image" content="{% block og_image %}    {{service.getSite().getFacebookImage()}} {% endblock %}" />
+    <meta property="og:url" content="{% block og_url %}    {{service.getSite().getFacebookUrl()}} {% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}    {{service.getSite().getFacebookDescription()}} {% endblock %}" />
+    <meta property="fb:app_id" content="    {{service.getSite().getFacebookAppId()}} " />
+
+    <!-- for Twitter -->          
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{% block twitter_title %}{{service.getSite().getFacebookTitle()}}"{% endblock %} />
+    <meta name="twitter:description" content="{% block twitter_description %}{{service.getSite().getFacebookDescription()}}{% endblock %}" />
+    <meta name="twitter:image" content="{% block twitter_image %}{{service.getSite().getFacebookImage()}}{% endblock %}" />
+
+
+
+
+
+        {% block javascripts %}
+
+    <script src="{{ asset('js/jquery-1.9.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bootstrap-3.0.0/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
+ <script src="{{ asset('js/jquery.form.js') }}"  type="text/javascript"></script>
+
+
+
+
+
+        {% endblock %}
+
+        {% block stylesheets %}
+
+    <link href="{{ asset('bootstrap-3.0.0/dist/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+
+<script src="{{ asset('bootstrap-3.0.0/assets/js/respond.min.js') }}"></script>
+<![endif]-->
+
+    <link href="{{ asset('css/main.css') }}" type="text/css" rel="stylesheet" />
+
+    <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />      
+     {% endblock %}
+
+
+
+
+
+
+
+    <script>
+        // this code highlights the current path
+        $(document).ready(function() {
+
+            $('a').each(function() {
+
+                if ($(this).attr("href") == "{{ path(app.request.attributes.get('_route'), 
+        app.request.attributes.get('_route_params'))   }}")
+                {
+
+                    $(this).css('font-weight', 'bold');
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+
+  {% block body %}
+
+        {% block open%}
+<body>
+        {% endblock open%}
+
+
+
+
+
+ {% block header %}
+    <header role="banner" id="top_menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="{{path('home')}}">ZETEQ </a>
+
+            </div>
+            <nav id="sp-nav" role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+
+
+
+                <ul id="top-nav" class="nav navbar-nav pull-right">
+{% for page in service.getEnabledPages()%}
+                    <li class=""><a class="top-nav-a" href="{{path('page_show',{'slug':page.getSlug()})}}">{{page.getTitle()}}</a></li>
+{% endfor %}
+
+                    <li class=""><a class="top-nav-a" href="{{path('contact') }}">Contact</a></li>
+       <li class=""><a class="top-nav-a" href="{{path('blog') }}">Blog</a></li>
+                </ul>
+
+
+            </nav>
+        </div>
+    </header>
+     {% endblock header %}
+
+
+
+    <div id="main_container" class="" style="" >
+
+
+
+{% block middle_container %}
+
+
+
+        <div class="">
+            {% block content %} {% endblock %}
+        </div>
+
+{% endblock %}
+
+
+
+    </div>
+
+
+
+
+    <h1 id="test">sdfdssdfds</h1>
+
+
+
+{{include('ZeteqFrontBundle:Front:scroll_top.html.twig')}}
+
+ {% block footer%}
+{{include('ZeteqFrontBundle:Front:_footer.html.twig')}}
+{% endblock footer %}
+
+
+
+     {% block admin_menu%}
+    
+
+
+       {% if is_granted('ROLE_ADMIN') %}
+        <a style="border-radius: 0px; position:fixed;bottom:100px;left:0px;" class="toggle_front_admin btn {% if app.session.get('show_front_admin') %}btn-primary {% endif %} " href="{{path('toggle_front_admin')}}"><i class="fa fa-cogs fa-2x"></i></a>
+        <script>
+      $(document).ready(function() {
+          
+          
+    $(".toggle_front_admin").click (function () {
+        
+        
+           $("#fa_div").toggle();
+   $(this).toggleClass('btn-primary');
+
+        
+     //   var href=$(this).attr('href');
+  $.ajax({
+    type: "POST", // or GET
+    url:' {{path('toggle_front_admin')}}' ,
+    data: "someData=someThing&someMore=somethingElse",
+    success: function(data){
+
+    }
+  });
+  return false; // stop the browser following the link
+});
+
+});
+    </script>
+        <div id="fa_div" {% if app.session.get('show_front_admin') %} {%else%}style="display:none" {% endif %} >
+                {{include('ZeteqFrontBundle:Front:_front_admin_menu.html.twig')}}
+</div>       
+
+    {%else %}
+
+   {% endif %}
+
+     {% endblock admin_menu %}
+
+
+
+
+
+
+        {% endblock  %}
+
+
+    
+ <script type="text/javascript">
+    $(document).ready(function(){
+        
+        
+        
+                $(window).scroll(function(){
+            if ($(this).scrollTop() > 400) {
+                $('#test').addClass('animate');
+            } else {
+                $('#test').removeClass('animate');
+            }
+        });
+        
+        
+        
+        
+        
+
+ 
+    });
+</script>
+     
+
+</html>
+
+
+
+
+{% else %}
+<h2>Site under maintenance</h2>
+
+{% endif %}
+
+
+    
+    
+    
+    

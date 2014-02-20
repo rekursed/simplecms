@@ -1,0 +1,20 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+{% block title %}
+Admin
+{% endblock %}
+{% block content %}
+
+<h1><i class="fa fa-cogs"></i> Admin panel</h1>
+<div class="row">
+    <div class="col-md-3"><div class="well well-dash  "><a href="{{path('page')}}"><i class="fa fa-file-o dash-i"></i> <h4>Pages</h4></a></div></div>
+    <div class="col-md-3"><div class="well well-dash "><a href="{{path('blogpost')}}"><i class="fa fa-comments-o  dash-i"></i><h4>Blog Posts</h4></a></div></div> 
+    <div class="col-md-3"><div class="well well-dash "><a href="{{path('gallery')}}"><i class="fa fa-crosshairs dash-i"></i><h4>Gallery</h4></a></div></div>
+    <div class="col-md-3"><div class="well well-dash "><a href="{{path('image')}}"><i class="fa fa-picture-o dash-i"></i><h4>Images</h4></a></div></div>   
+    
+</div>
+
+
+
+
+{% endblock %}

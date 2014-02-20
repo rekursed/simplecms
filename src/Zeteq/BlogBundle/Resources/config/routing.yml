@@ -1,0 +1,13 @@
+blog:
+    pattern:  /blog/
+    defaults: { _controller: ZeteqBlogBundle:Blog:index }
+blogpost_show:
+    pattern:  /blog/post/{slug}
+    defaults: { _controller: "ZeteqBlogBundle:Blog:blogpost_show" }
+    
+blogpostcategory_show:
+    pattern:  /blog/category/{slug}
+    defaults: { _controller: "ZeteqBlogBundle:Blog:blogpostcategory_show" }
+blog_search:
+    pattern:  /blog/search
+    defaults: { _controller: ZeteqBlogBundle:Blog:blog_search }

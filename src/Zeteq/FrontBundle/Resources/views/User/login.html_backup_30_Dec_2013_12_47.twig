@@ -1,0 +1,65 @@
+{% extends 'ZeteqFrontBundle:Layout:layout.html.twig' %}
+
+{% block title %}Login{% endblock %}
+ 
+{% block content %}
+
+   <style type="text/css">
+
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+    </style>
+   {# src/Acme/SecurityBundle/Resources/views/Security/login.html.twig #}
+<div style="text-align:center">
+{% if error %}
+    <div style="font-weight:bold;padding:10px;color:red">{{ error.message }}</div>
+{% endif %}
+    <h2><i class="fa fa-user"></i> Sign in</h2>
+    </div>
+<form class="form-signin" action="{{ path('login_check') }}" method="post">
+ <h2 class="form-signin-heading"></h2>
+ 
+    <input type="text" id="username" name="_username" value="{{ last_username }}"  class="form-control" placeholder="Username" required autofocus/>
+
+    <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required/>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+    {#
+        If you want to control the URL the user is redirected to on success (more details below)
+        <input type="hidden" name="_target_path" value="/account" />
+    #}
+
+    <button  class="btn btn-lg btn-primary btn-block" type="submit">login</button>
+</form>
+    <div style="text-align: center">    <a href="{{path('forgot_password')}}">Forgot password?</a></div>
+{% endblock %}
+
+
+ 
+
+

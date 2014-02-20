@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Subscriber</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <div style="padding-top:10px;padding-bottom:10px;">
+        <a href="{{ path('subscriber') }}">
+               <span class="glyphicon glyphicon-chevron-left"></span>   Back to the list
+        </a>
+</div>
+
+        <a href="{{ path('subscriber_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+
+    {{ form(delete_form) }}
+
+{% endblock %}

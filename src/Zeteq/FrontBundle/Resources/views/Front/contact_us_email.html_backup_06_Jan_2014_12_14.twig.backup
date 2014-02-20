@@ -1,0 +1,8 @@
+
+<h3>You have receieve a contact request</h3>
+<table border='1' cellpadding='1' width='500px'>
+    <tr><td><h3>Name</h3></td> <td>{{data['name']}}</td></tr>
+    <tr><td><h3>Email</h3></td> <td>{{data['email']}}</td></tr>
+    <tr><td colspan='2'><h3>Message</h3></td> </tr>
+    <tr><td colspan='2'>{{data['message']}}</td></tr>    
+</table>

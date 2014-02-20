@@ -1,0 +1,158 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+
+{% block title %}
+New Gallery --Main Admin
+{% endblock %}
+
+
+{% block stylesheets %}
+{{parent()}}
+{{ form_stylesheet(form) }}
+{% endblock %}
+
+{% block javascripts %}
+{{parent()}}    {{ form_javascript(form) }}
+{% endblock %}
+
+
+
+
+{% block content %}
+
+{{ form_start(form) }}
+    
+    <nav id="form_fixed_top_menu"  class="navbar navbar-default  navbar-fixed-top" role="navigation">
+        
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                
+                    <a class="navbar-brand">Gallery creations</a>
+ 
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="nav_collapse" class="collapse navbar-collapse">
+
+ 
+               <button class="btn btn-success pull-right navbar-btn" type="submit">Save</button>
+                       <a style="margin-right: 10px"  class="btn btn-default navbar-btn pull-right"  href="{{ path('gallery') }}">
+            Back to the list
+        </a>
+      
+        </div><!-- /.navbar-collapse -->
+        
+        </div>
+      </nav>
+    
+    
+ {{ form_errors(form) }}
+
+   {{ form_row(form.name) }}
+
+
+
+     <h2>Images  </h2>
+    <div class="well" id="image-well">
+ 
+                    <ul  style="padding:0px;margin:0px" class="ul_route_params" data-prototype="{{ form_widget(form.images.vars.prototype)|e }}">
+    {% for pi in form.images %}
+               <li class="" style="">
+
+<img style="" src="{{asset(pi.vars.value.getWebPath())}}"/>
+<div style="padding:20px;text-align: center;position:absolute;bottom:10px;">
+{{ form_widget(pi.image) }}
+     </div>                   
+                        </li>
+
+        {% endfor %}
+                    </ul>
+    <br clear="all"/>
+    </div>
+    
+    
+
+ {{ form_row(form._token) }}
+
+  
+
+
+
+
+
+
+     <script>
+                // Get the ul that holds the collection of ul_route_params
+                var collectionHolder = $('ul.ul_route_params');
+
+                // setup an "add a tag" link
+                var $addTagLink = $('<a  href="#" class="btn btn-info add_tag_link"><i class="fa fa-plus"></i>Add Image</a>');
+                var $newLinkLi = $('<li id="add_li"    style=""></li>').append($addTagLink);
+
+                jQuery(document).ready(function() {
+
+
+                    // add a delete link to all of the existing tag form li elements
+                    collectionHolder.find('li').each(function() {
+                        addTagFormDeleteLink($(this));
+                    });
+                    // add the "add a tag" anchor and li to the tags ul
+                    collectionHolder.append($newLinkLi);
+
+                    // count the current form inputs we have (e.g. 2), use that as the new
+                    // index when inserting a new item (e.g. 2)
+                    collectionHolder.data('index', collectionHolder.find(':input').length);
+
+                    $addTagLink.on('click', function(e) {
+                        // prevent the link from creating a "#" on the URL
+                        e.preventDefault();
+
+                        // add a new tag form (see next code block)
+                        addTagForm(collectionHolder, $newLinkLi);
+                    });
+                });
+
+
+                function addTagForm(collectionHolder, $newLinkLi) {
+                    // Get the data-prototype explained earlier
+                    var prototype = collectionHolder.data('prototype');
+
+                    // get the new index
+                    var index = collectionHolder.data('index');
+
+                    // Replace '__name__' in the prototype's HTML to
+                    // instead be a number based on how many items we have
+                    var newForm = prototype.replace(/__name__/g, index);
+
+                    // increase the index with one for the next item
+                    collectionHolder.data('index', index + 1);
+
+                    // Display the form in the page in an li, before the "Add a tag" link li
+                    var $newFormLi = $('<li ></li>').append(newForm);
+                    $newLinkLi.before($newFormLi);
+
+                    // add a delete link to the new form
+                    addTagFormDeleteLink($newFormLi);
+                }
+
+                function addTagFormDeleteLink($tagFormLi) {
+                    var $removeFormA = $('<a class=" a_remove" href="#"> <i class="fa fa-times-circle"></i> </a>');
+                    $tagFormLi.append($removeFormA);
+
+                    $removeFormA.on('click', function(e) {
+                        // prevent the link from creating a "#" on the URL
+                        e.preventDefault();
+
+                        // remove the li for the tag form
+                        $tagFormLi.remove();
+                    });
+                }
+                </script>
+{% endblock %}

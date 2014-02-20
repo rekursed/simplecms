@@ -1,0 +1,25 @@
+{% extends 'ZeteqFrontBundle:Layout:layout.html.twig' %}
+{% block title %} {{entity.getTitle()}}  {% endblock %}
+{% block middle_container -%}
+
+<div class="container">
+<div class="row">
+    <div class="col-md-8">
+      {% block content -%}  
+        {{include(page_file)}}
+
+
+{% endblock content%}
+    </div>
+    
+    <div class="col-md-4">
+   
+{% for image in service.getGallery('ads').getImages() %}
+  <img style="width: 100%" src="{{asset(image.getWebPath())}}"/>
+        
+{% endfor %}
+    </div>
+    
+</div>
+    </div>
+{% endblock middle_container %}

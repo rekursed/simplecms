@@ -1,0 +1,24 @@
+{% extends 'ZeteqFrontBundle:Layout:blog_layout.html.twig' %}
+
+
+
+ {% block blog_header %}    <h1> <a href="{{path('blog')}}">Our Blog</a>  / {{entity.getName()}}</h1> {% endblock%}
+{% block blog_content%}
+
+
+
+ 
+<div>
+
+    {% for post in pagination%}
+
+<h1><a href="{{path('blogpost_show',{'slug':post.slug})}}">{{post.getTitle()}}</a></h1>
+<h6>{{post.getCreated() | date('M d Y h:i a')}}</h6>
+<h4>{{post.getOverview()}}</h4>
+{% endfor%}
+    
+    
+    
+</div>
+
+{% endblock blog_content %}

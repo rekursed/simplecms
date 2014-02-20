@@ -1,0 +1,11 @@
+services:
+    service:
+        class:  Zeteq\FrontBundle\Extensions\Service
+        arguments: ['@doctrine.orm.entity_manager']
+ 
+    twig.extension.service:
+        class: Zeteq\FrontBundle\Extensions\ServiceExtension
+        arguments: ["@service"]
+        tags:
+            - { name: twig.extension }
+

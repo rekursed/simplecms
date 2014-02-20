@@ -1,0 +1,31 @@
+<link type="text/css" href="{{asset('js/skitter/skitter.styles.css')}} " media="all" rel="stylesheet" />
+<script type="text/javascript" src="{{asset('js/skitter/jquery.easing.1.3.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/skitter/jquery.animate-colors-min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/skitter/jquery.skitter.min.js')}}"></script>
+
+Init the Skitter
+
+<script type="text/javascript" language="javascript">
+	$(document).ready(function() {
+		$(".box_skitter_large").skitter();
+	});
+</script>
+
+Add the images through the unordered list
+
+<div class="box_skitter box_skitter_large">
+	<ul>
+
+        {% for image in service.getGallery("Home").getImages() %}
+		<li>
+			<a href="#swapBarsBack"><img src="{{asset(image.getWebPath())}}" class="swapBarsBack" /></a>
+			<div class="label_text"><p>swapBarsBack</p></div>
+		</li>
+              {% endfor %}
+	</ul>
+  
+  
+ 
+
+  
+</div>

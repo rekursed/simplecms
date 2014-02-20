@@ -1,0 +1,52 @@
+filemanager_root:
+    pattern:  /admin/filemanager/root
+    defaults: { _controller: ZeteqFileManagerBundle:Default:filemanager_root }
+filemanager_upload:
+    pattern:  /admin/filemanager/upload
+    defaults: { _controller: ZeteqFileManagerBundle:Default:upload } 
+filemanager_move_uploaded_files:
+    pattern:  /admin/filemanager/move_uploaded_files
+    defaults: { _controller: ZeteqFileManagerBundle:Default:move_uploaded_files } 
+
+
+filemanager_open_dir:
+    pattern:  /admin/filemanager/open_dir
+    defaults: { _controller: ZeteqFileManagerBundle:Default:filemanager_open_dir }
+filemanager_delete_dir:
+    pattern:  /admin/filemanager/delete_dir
+    defaults: { _controller: ZeteqFileManagerBundle:Default:filemanager_delete_dir }
+filemanager_mkdir:
+    pattern:  /admin/filemanager/mkdir
+    defaults: { _controller: ZeteqFileManagerBundle:Default:filemanager_mkdir }
+
+
+
+filemanager_template_folder:
+    pattern:  /template_folder
+    defaults: { _controller: ZeteqFileManagerBundle:Default:template_folder }
+filemanager_editfile:
+    pattern:  /admin/filemanager/editfile
+    defaults: { _controller: ZeteqFileManagerBundle:Default:edit_file }
+filemanager_savefile:
+    pattern:  /admin/filemanager/savefile
+    defaults: { _controller: ZeteqFileManagerBundle:Default:save_file }
+filemanager_new_file:
+    pattern:  /admin/filemanager/newfile
+    defaults: { _controller: ZeteqFileManagerBundle:Default:new_file }
+filemanager_rename_file:
+    pattern:  /admin/filemanager/rename_file
+    defaults: { _controller: ZeteqFileManagerBundle:Default:rename_file }
+filemanager_copy_file:
+    pattern:  /admin/filemanager/copy_file
+    defaults: { _controller: ZeteqFileManagerBundle:Default:copy_file }
+filemanager_move_file:
+    pattern:  /admin/filemanager/move_file
+    defaults: { _controller: ZeteqFileManagerBundle:Default:move_file }
+
+filemanager_delete_file:
+    pattern:  /admin/filemanager/delete_file
+    defaults: { _controller: ZeteqFileManagerBundle:Default:delete_file }
+filemanager_backup_file:
+    pattern:  /admin/filemanager/backup_file
+    defaults: { _controller: ZeteqFileManagerBundle:Default:backup_file }
+

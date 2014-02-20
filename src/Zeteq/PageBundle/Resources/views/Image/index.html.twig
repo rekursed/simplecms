@@ -1,0 +1,72 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+{% block content -%}
+
+
+  <div class="">
+      <nav role="navigation" class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Images</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div  class="collapse navbar-collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>            
+            <a href="{{ path('image_new') }}">
+                Create a new entry
+            </a>
+</li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+    </div>
+
+
+ 
+
+  <table class="table table-striped table-hover table-bordered records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th></th>
+                <th>Gallery</th>
+                <th>Path</th>
+  
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pagination %}
+            <tr>
+                <td><a href="{{ path('image_edit', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><img src="{{ asset( entity.getWebPath) | apply_filter('admin_image_index') }}"/></td>
+                <td>{{ entity.getGallery() }}</td>
+                <td>{{ entity.getWebPath() }}</td>
+  
+                <td>
+                  <div class="btn-group pull-right">
+ 
+                        <a class="btn btn-default" href="{{ path('image_edit', { 'id': entity.id }) }}">edit</a>
+                </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+<div class="navigation">
+   {{ knp_pagination_render(pagination) }}
+</div>
+
+     
+    {% endblock %}

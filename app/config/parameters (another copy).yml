@@ -1,0 +1,13 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: cart_simplecms
+    database_user: cart_zeteq
+    database_password: 'Hkj38djf&'
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: zeteq.systems@gmail.com
+    mailer_password: 'Hkj38djf&'
+    locale: en
+    secret: abcd

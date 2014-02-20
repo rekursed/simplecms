@@ -1,0 +1,20 @@
+sudo chmod -R 777 /home/ze/www/zeteq_cms_projects/simplecms
+sudo php composer.phar dump-autoload --optimize
+rm -rf  /home/ze/www/zeteq_cms_projects/simplecms/app/cache
+sudo chmod -R 755 /home/ze/www/zeteq_cms_projects/simplecms
+cd /home/ze/www/zeteq_cms_projects/simplecms
+sudo php app/console plum:deploy odyssey --no-debug
+sudo chmod -R 777 /home/ze/www/zeteq_cms_projects/simplecms
+sudo mkdir /home/ze/www/zeteq_cms_projects/simplecms/app/cache
+cd  /home/ze/www/zeteq_cms_projects/simplecms 
+php app/console cache:clear 
+
+
+
+
+local to online
+
+
+mysqldump -u root --password="" --host=localhost -C odyssey_simplecms | ssh odyssey@odysseydoor.com -p 2222 "mysql -u odyssey_odyssey --password='Hkj38djf&' odyssey_simplecms"
+
+

@@ -1,0 +1,40 @@
+site_disabled:
+    pattern:  /site_disabled
+    defaults: { _controller: ZeteqFrontBundle:Front:site_disabled }
+home:
+    pattern:  /
+    defaults: { _controller: ZeteqFrontBundle:Front:page_show,slug:home }
+contact:
+    pattern:  /contact.html
+    defaults: { _controller: ZeteqFrontBundle:Front:contact }
+    
+page_show:
+    pattern:  /page/{slug}
+    defaults: { _controller: "ZeteqFrontBundle:Front:page_show" }
+page_editor:
+    pattern:  /page-editor/{slug}
+    defaults: { _controller: "ZeteqFrontBundle:Front:page_editor" }
+page_editor_save:
+    pattern:  /page-editor-save/{slug}
+    defaults: { _controller: "ZeteqFrontBundle:Front:page_editor_save" }
+    
+blogpost_editor:
+    pattern:  /blogpost-editor/{slug}
+    defaults: { _controller: "ZeteqFrontBundle:Front:blogpost_editor" }
+blogpost_editor_save:
+    pattern:  /blogpost-editor-save/{slug}
+    defaults: { _controller: "ZeteqFrontBundle:Front:blogpost_editor_save" }
+toggle_front_admin:
+    pattern:  /toggle_front_admin
+    defaults: { _controller: "ZeteqFrontBundle:Front:toggle_front_admin" }   
+    
+    
+
+    
+newsletter_subscribe:
+    pattern:  /subscribe.html
+    defaults: { _controller: "ZeteqFrontBundle:Subscriber:subscribe" }
+
+    
+    
+    

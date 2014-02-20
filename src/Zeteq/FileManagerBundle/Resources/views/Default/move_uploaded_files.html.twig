@@ -1,0 +1,6 @@
+{% for f in files%}
+
+{{ f.getClientOriginalName()}}
+{%endfor%}
+<hr/>
+{{dump(files)}}

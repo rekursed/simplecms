@@ -1,0 +1,30 @@
+slot:
+    pattern:  /
+    defaults: { _controller: "ZeteqPageBundle:Slot:index" }
+
+slot_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ZeteqPageBundle:Slot:show" }
+
+slot_new:
+    pattern:  /new
+    defaults: { _controller: "ZeteqPageBundle:Slot:new" }
+
+slot_create:
+    pattern:  /create
+    defaults: { _controller: "ZeteqPageBundle:Slot:create" }
+    requirements: { _method: post }
+
+slot_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZeteqPageBundle:Slot:edit" }
+
+slot_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZeteqPageBundle:Slot:update" }
+    requirements: { _method: post|put }
+
+slot_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZeteqPageBundle:Slot:delete" }
+

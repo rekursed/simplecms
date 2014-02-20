@@ -1,0 +1,30 @@
+site:
+    pattern:  /
+    defaults: { _controller: "ZeteqPageBundle:Site:index" }
+
+site_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ZeteqPageBundle:Site:show" }
+
+site_new:
+    pattern:  /new
+    defaults: { _controller: "ZeteqPageBundle:Site:new" }
+
+site_create:
+    pattern:  /create
+    defaults: { _controller: "ZeteqPageBundle:Site:create" }
+    requirements: { _method: post }
+
+site_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZeteqPageBundle:Site:edit" }
+
+site_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZeteqPageBundle:Site:update" }
+    requirements: { _method: post|put }
+
+site_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZeteqPageBundle:Site:delete" }
+ 

@@ -1,0 +1,13 @@
+forgot_password:
+    pattern:  /forgot-password
+    defaults: { _controller: "ZeteqUserBundle:ForgotPassword:forgot_password" }
+reset_password:
+    pattern:  /reset-password
+    defaults: { _controller: "ZeteqUserBundle:ForgotPassword:reset_password" }
+
+reset_password_link:
+    pattern:  /reset-password-link/tmp/{tmp}
+    defaults: { _controller: "ZeteqUserBundle:ForgotPassword:reset_password_link" }
+save_new_password:
+    pattern:  /save-new-password}
+    defaults: { _controller: "ZeteqUserBundle:ForgotPassword:save_new_password" }

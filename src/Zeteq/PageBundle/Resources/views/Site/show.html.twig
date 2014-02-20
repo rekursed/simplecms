@@ -1,0 +1,99 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Site</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Slogan</th>
+                <td>{{ entity.slogan }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ entity.slug }}</td>
+            </tr>
+            <tr>
+                <th>Enabled</th>
+                <td>{{ entity.enabled }}</td>
+            </tr>
+            <tr>
+                <th>Google_analytics</th>
+                <td>{{ entity.googleanalytics }}</td>
+            </tr>
+            <tr>
+                <th>Meta_description</th>
+                <td>{{ entity.metadescription }}</td>
+            </tr>
+            <tr>
+                <th>Meta_keywords</th>
+                <td>{{ entity.metakeywords }}</td>
+            </tr>
+            <tr>
+                <th>Meta_copyright</th>
+                <td>{{ entity.metacopyright }}</td>
+            </tr>
+            <tr>
+                <th>Meta_application</th>
+                <td>{{ entity.metaapplication }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_title</th>
+                <td>{{ entity.facebooktitle }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_type</th>
+                <td>{{ entity.facebooktype }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_image</th>
+                <td>{{ entity.facebookimage }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_url</th>
+                <td>{{ entity.facebookurl }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_description</th>
+                <td>{{ entity.facebookdescription }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_app_id</th>
+                <td>{{ entity.facebookappid }}</td>
+            </tr>
+            <tr>
+                <th>Favicon_path</th>
+                <td>{{ entity.faviconpath }}</td>
+            </tr>
+            <tr>
+                <th>Favicon</th>
+                <td>{{ entity.favicon }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <div style="padding-top:10px;padding-bottom:10px;">
+        <a href="{{ path('site') }}">
+               <span class="glyphicon glyphicon-chevron-left"></span>   Back to the list
+        </a>
+</div>
+
+        <a href="{{ path('site_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+
+    {{ form(delete_form) }}
+
+{% endblock %}

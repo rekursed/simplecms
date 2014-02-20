@@ -1,0 +1,111 @@
+{% extends 'ZeteqAdminBundle:Admin:admin_layout.html.twig' %}
+
+ {% block title %}
+File manager --Admin
+{% endblock %}
+
+{% block content -%}
+<script>
+$(document).ready(function(){
+
+
+$('body').on('hidden.bs.modal', '.modal', function () {
+    $(this).removeData('bs.modal');
+});
+    
+
+});
+    </script>
+
+      <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-inner">
+              <a class="navbar-brand">Filemanager</a>              
+              <div class="btn-toolbar navbar-right">
+         <a data-toggle="modal"  data-target="#modal_mkdir"  class="btn btn-primary navbar-btn "      href="{{path('filemanager_mkdir',{'path':path })}}">new directory</a>
+         <a  data-toggle="modal"  data-target="#myModal"    class="btn btn-primary navbar-btn "   href="{{path('filemanager_upload',{'path':path})}}" >upload files</a>&nbsp;
+ </div>
+        
+      </div></nav>
+    <div class="well">
+        
+            <a  class="btn btn-sm btn-info pull-left" href="{{path('filemanager_open_dir',{'path':prev})}}">
+                <i  class="glyphicon glyphicon-chevron-left"></i> Back</a>    
+   
+        <span class="pull-right">   {{path}}</span>
+        <br clear="all"/>
+    </div>
+
+ 
+    <h1><i class="glyphicon glyphicon-file"></i> Files</h1>
+    <table class="table table-bordered table-condensed table-hover table-striped">
+ {% for f in files %}
+    <tr><td>
+          <a target="_blank"  class="btn-small" href="{{path('filemanager_editfile',{'path':f.getRealPath})}}">  {{f.filename}} </a>
+        </td>
+            
+        <td style="text-align: right">
+        
+            <a class="btn btn-success" target="_blank" href="{{path('filemanager_editfile',{'path':f.getRealPath})}}">edit</a>
+   <a  class="btn btn-success" href="{{path('filemanager_copy_file',{'path':f.getRealPath})}}">copy</a>
+        <a  data-toggle="modal"  data-target="#myModal"  class="btn btn-primary"  href="{{path('filemanager_rename_file',{'path':f.getRealPath})}}">rename</a>
+   <a  class="btn btn-info" href="{{path('filemanager_backup_file',{'path':f.getRealPath})}}">backup</a>
+                <a  class="btn btn-small btn-danger"  onclick="return confirm('are u sure?')"  href="{{path('filemanager_delete_file',{'path':f.getRealPath})}}">delete</a>
+     
+        </td>
+            
+            </tr>
+
+{% endfor %}
+ 
+    </table>
+    
+    <h1><i class="glyphicon glyphicon-folder-open"></i> Directories</h1>
+     <table class="table table-bordered table-condensed table-hover table-striped">   
+     {% for f in dirs %}
+    <tr><td>
+       <a  class="btn btn-small" href="{{path('filemanager_open_dir',{'path':f.getRealPath})}}">        {{f.filename}}   </a>
+        </td>
+            
+    <td style="text-align: right">
+        
+            <a  class="btn btn-info" href="{{path('filemanager_open_dir',{'path':f.getRealPath})}}">open</a>
+           <a  data-toggle="modal"  data-target="#myModal" class="btn btn-info"  href="{{path('filemanager_rename_file',{'path':f.getRealPath})}}">rename</a>         
+            <a  class="btn btn-small btn-danger"  onclick="return confirm('are u sure?')"  href="{{path('filemanager_delete_dir',{'path':f.getRealPath})}}">delete</a>
+     
+        </td>
+            
+            </tr>
+
+{% endfor %}
+ </table>
+ 
+    
+    
+
+    
+  <!-- Modal -->
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
+    
+    
+     <!-- Modal -->
+<div class="modal" id="modal_mkdir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->   
+    
+ 
+    
+ 
+    
+    
+    
+    
+   
+    
+    
+ {% endblock %}

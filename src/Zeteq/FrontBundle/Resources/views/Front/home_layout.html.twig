@@ -1,0 +1,46 @@
+{% extends 'ZeteqFrontBundle:Front:layout.html.twig' %}
+
+        {% block open%}
+<body data-spy="scroll" data-target="#sp-nav">
+        {% endblock open%}
+
+{% block header%}
+    <header role="banner" id="top_menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="{{path('home')}}">ZETEQ </a>
+
+            </div>
+            <nav id="sp-nav" role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+
+
+
+                <ul id="top-nav" class="nav navbar-nav pull-right">
+                    <li class=""><a class="top-nav-a" href="#home">HOME</a></li>
+                    <li class=""><a class="top-nav-a" href="#aboutus">ABOUT US</a></li>
+                    <li class=""><a class="top-nav-a" href="#services">SERVICES</a></li>
+                    <li class=""><a class="top-nav-a" href="#portfolio">PORTFOLIO</a></li>
+                    <li class=""><a class="top-nav-a" href="#contact">CONTACT</a></li>
+
+                </ul>
+
+
+            </nav>
+        </div>
+    </header>
+{% endblock header %}
+
+
+{% block content %}
+
+{% endblock %}
+
+
+

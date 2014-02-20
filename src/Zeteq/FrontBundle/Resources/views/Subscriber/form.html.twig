@@ -1,0 +1,32 @@
+    <script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+
+    var options = { 
+        target:        '#subs_result',  
+        clearForm: true  
+ 
+ 
+    };
+ 
+
+            $('#subsForm').ajaxForm(options); 
+        }); 
+    </script> 
+    
+    
+
+<form id="subsForm" method="post" action="{{path('newsletter_subscribe')}}">
+
+         
+
+
+    <form id="subsForm" method="post" action="{{path('newsletter_subscribe')}}">
+             <div class="input-group">
+        <input class="form-control" type="email" name="email" required placeholder="your email address"/>
+               <span class="input-group-btn">
+                  <button type="submit" class="btn btn-search">Subscribe</button>
+              </span>
+          </div>
+          <div id="subs_result"></div>
+  </form>
