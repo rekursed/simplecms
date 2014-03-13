@@ -173,6 +173,7 @@ body{
     background: none repeat scroll 0 0 #EAEAEA;
     border: 1px solid #E0E0E0;
     font-size: 90px;
+    margin-bottom: 10px;
     min-height: 490px;
     text-align: center;
     transition: background-color 1s,color 1s;
