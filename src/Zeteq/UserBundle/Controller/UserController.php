@@ -243,9 +243,9 @@ $entity->setPassword($password);
             
             
                 $factory = $this->get('security.encoder_factory');
-$encoder = $factory->getEncoder($entity);
-$password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
-$entity->setPassword($password);
+//$encoder = $factory->getEncoder($entity);
+//$password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+//$entity->setPassword($password);
             $em->persist($entity);
             $em->flush();
 
