@@ -39,7 +39,7 @@ body{
 }
 
 #main_container{
-    
+
     min-height:400px;
 }
 .feature_row div 
@@ -117,7 +117,12 @@ body{
     position:relative;
 }
 
-.navbar-brand{font-size:23px;color:#333}
+.navbar-brand {
+    color: #333333;
+    font-family: droid;
+    font-size: 23px;
+    font-weight: bold;
+}
 
 .top-nav-a {
     color: #999999;
@@ -183,13 +188,13 @@ body{
     text-align: center;
 }
 
-.home_icon:hover{
-    background-color: #79CDFF;
-    color:white;
-cursor: alias;
+.home_icon:hover {
+    background-color: #FFE5A0;
+    color: #404040;
+    cursor: cell;
 }
-.home_icon:hover .home_icon_text{
-    color:white
+.home_icon:hover .home_icon_text {
+    color: #404040;
 }
 
 
@@ -225,19 +230,17 @@ cursor: alias;
 
 .slide_container{
 
-    height:400px;
+    height:405px;
     width:100%;
 }
 .slide_container a{
     color:white;
 }
 
-#div_features{ color:white;}
-
-
 #div_tech {
-    background:url('/upload/images/food.png');
+    background: url("../upload/images/food.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
     color: #FFFFFF;
+
 }
 
 
@@ -253,15 +256,17 @@ div#div_tech slide_i a{
 
 }
 
-#div_tech .i_cont
-{
+#div_tech .i_cont {
+    color: #808080;
+    font-size: 15px;
     text-align: center;
-
+    text-shadow: 0 1px 0 #DAC05F;
 }
 
 
-#div_features{
-    background:url('/upload/images/stardust.png');
+#div_features {
+    background: url("../upload/images/astro.jpg") repeat scroll 0 0 / 300px 410px rgba(0, 0, 0, 0);
+    color:white;
 }
 
 #div_features i.slide_i{
@@ -292,18 +297,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #div_responsive {
-   background:url('/upload/images/purty_wood.png');
+    background:url('../upload/images/purty_wood.png');
     color: #404040;
     padding-top: 45px;
 }
 
 #div_responsive i.slide_i {
-    color: #FFE5A0;
+    color: #C1985D;
     font-size: 150px;
     line-height: 150px;
     margin: 5px;
     text-align: center;
-}   
+    text-shadow: 1px 1px 1px #DFDFA6;
+}
 
 #div_features{
     padding-top: 30px;
@@ -317,11 +323,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 #div_features h1 {
     font-family: droid;
     margin-top: 40px;
-    text-shadow: 2px 2px 1px #499DCF;
+    text-shadow: 2px 2px 1px #303030;
 }
 
 #div_responsive h1 {
-    text-shadow: 2px 2px 1px #8FAA40;
+    text-shadow: 0 1px 1px #FFFDB1;
 }
 
 .slide_i{
@@ -329,7 +335,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #scroll_top {
-    background-color: #69BDEF;
+    background-color: #EF7530;
     bottom: 225px;
     color: #FFFFFF;
     display: none;
@@ -341,5 +347,67 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     transition: display 2s,background-color 3s;
 }
 
+a {
+    color: #87CAF2;
+}
 
+a:hover, a:focus {
+    color: #EF7530;
+    text-decoration: none;
+}
 
+.icons {
+    width: 100px;
+}
+
+h1, .h1 {
+    font-size: 50px;
+}
+
+h2, .h2 {
+    font-size: 40px;
+}
+
+.breakline {
+    background-color: #D7D7D7;
+    height: 1px;
+    margin: 40px auto;
+}
+
+.col-cstm {
+    margin-bottom: 20px;
+    padding: 0 50px;
+}
+
+.homebox {
+    background-color: #EAEAEA;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 10px 10px -11px #333333;
+    margin-top: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.homebox > p {
+    color: #737373;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0 1px 1px #FFFFFF;
+    text-transform: uppercase;
+}
+
+italic{
+    font-style: italic;
+}
+
+#sp-nav2 ul li a {
+font-size: 70%;
+}
+
+.navbar-header.cntr {
+    margin: 0 40%;
+    text-align: center;
+    width: 100%;
+}
