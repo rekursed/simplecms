@@ -67,12 +67,6 @@
     <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />      
      {% endblock %}
 
-
-
-
-
-
-
     <script>
         // this code highlights the current path
         $(document).ready(function() {
@@ -103,76 +97,10 @@
 
 
 
- {% block header %}
-    <header role="banner" id="top_menu" class="navbar navbar-default navbar-fixed-top visible-lg visible-md">
-        <div class="container">
-            <div class="navbar-header">
-                <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="{{path('home')}}"><i class="fa fa-puzzle-piece" style="color: #EF7530">&nbsp</i>Simple CMS </a>
-
-            </div>
-            <nav id="sp-nav" role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+ 
 
 
 
-                <ul id="top-nav" class="nav navbar-nav pull-right">
-{% for page in service.getEnabledPages()%}
-                    <li class=""><a class="top-nav-a" href="{{path('page_show',{'slug':page.getSlug()})}}">{{page.getTitle()}}</a></li>
-{% endfor %}
-                    <li class=""><a class="top-nav-a" href="{{path('contact') }}">Contact</a></li>
-                    <li class=""><a class="top-nav-a" href="{{path('blog') }}">Blog</a></li>
-                    <li class=""><a class="top-nav-a" href="{{path('login') }}">Login</a></li>
-                </ul>
-
-
-            </nav>
-        </div>
-    </header>
-
-    <header role="banner" id="top_menu" class="navbar navbar-default navbar-fixed-top visible-sm visible-xs">
-        <div class="container">
-            <div class="navbar-header cntr">
-                <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="{{path('home')}}"><i class="fa fa-puzzle-piece" style="color: #EF7530">&nbsp</i>Simple CMS </a>
-
-            </div>
-            
-            
-            <nav id="sp-nav2" role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-
-
-                <ul id="top-nav" class="nav navbar-nav pull-right">
-{% for page in service.getEnabledPages()%}
-                    <li class=""><a class="top-nav-a" href="{{path('page_show',{'slug':page.getSlug()})}}">{{page.getTitle()}}</a></li>
-{% endfor %}
-                    <li class=""><a class="top-nav-a" href="{{path('contact') }}">Contact</a></li>
-                    <li class=""><a class="top-nav-a" href="{{path('blog') }}">Blog</a></li>
-                    <li class=""><a class="top-nav-a" href="{{path('login') }}">Login</a></li>
-                </ul>
-
-
-            </nav>
-        </div>
-    </header>
-     {% endblock header %}
-
-
-
-    
-    
-    
     <div id="main_container" class="" style="" >
 
 
@@ -199,9 +127,7 @@
 
 {{include('ZeteqFrontBundle:Front:scroll_top.html.twig')}}
 
- {% block footer%}
-{{include('ZeteqFrontBundle:Front:_footer.html.twig')}}
-{% endblock footer %}
+
 
 
 
@@ -253,29 +179,6 @@
 
         {% endblock  %}
 
-
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-
-
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 400) {
-                    $('#test').addClass('animate');
-                } else {
-                    $('#test').removeClass('animate');
-                }
-            });
-
-
-
-
-
-
-
-        });
-    </script>
 
 
 </html>

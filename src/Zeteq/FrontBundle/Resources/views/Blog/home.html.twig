@@ -5,7 +5,7 @@
 
 {% for post in pagination%}
 
-<h1><a href="{{path('blogpost_show',{'slug':post.slug})}}">{{post.getTitle()}}</a></h1>
+<h2><a href="{{path('blogpost_show',{'slug':post.slug})}}">{{post.getTitle()}}</a></h2>
 <h6>{{post.getCreated() | date('M d Y h:i a')}}</h6>
 <h4>{{post.getOverview()}}</h4>
 {% endfor%}
